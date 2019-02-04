@@ -1,9 +1,9 @@
 <?php
 class Race_info_model extends CI_Model {
-     
+      
     public function __construct()
     { 
-        $this->load->database();
+        //$this->load->database();
     }
     
     public function gets($year){  
@@ -46,9 +46,7 @@ class Race_info_model extends CI_Model {
     }
     
     public function set_race_info()
-    {
-        
-         $this->load->helper('url');
+    {   
          $data = array(
          'race_place' => $this->input->post('race_place'),
          'race_ymd' => $this->input->post('race_ymd'),

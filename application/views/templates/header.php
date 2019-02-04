@@ -17,7 +17,6 @@
     
   </head>
   <body>
-
 <!-- 반응형 내브바 Start -->
 <div class="navbar" class="navbar navbar-fixed-top">
   <div class="navbar-inner">
@@ -31,44 +30,54 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">GOGO Racer</a>
- 
+      <a class="brand" href="#">
+      
+      GOGO Racer
+      <font color="red" size="3pt">
+      <?php
+      $flas_msg = $this->session->flashdata('message');
+      
+      if ($flas_msg) 
+          echo $flas_msg."^^;;;";
+      else
+          echo $this->session->userdata('is_login');
+      ?>
+      </font>
+      </a>
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->
+				      <div class="nav-collapse collapse">
+				        <ul class="nav pull-right">
+				            
+				            <?php if($this->config->item('is_dev')){?>
+				            	<li><a><font color="blue">(DEV Server)</font></a></li>
+				            <?php
+				        	}
+				        	?>				         
+				        	<?php
+				        	if($this->session->userdata('is_login')){
+				        	?>
+				        		<li><a href="/auth/logout">로그아웃</a></li>
+				        	<?php
+				        	} else {
+				        	?>
+				        		<li><a href="/auth/login">로그인</a></li>
+				        		<li><a href="/auth/register">회원가입</a></li>
+				        	<?php
+				        	}
+				        	?>
+				        </ul>				        
+				      </div>        
       </div>
  
     </div>
   </div>
 </div>
-<!-- 반응형 내브바 End -->
-  
+<!-- 반응형 내브바 End --> 
 <!-- Bootstrap Start -->
 <div class="container-fluid">
   <div class="row-fluid">
 
-   
-<!--
-< Bootstrap Start >   
-  <div class="container-fluid">
-  <div class="row-fluid">
-  
-  < Bootstrap Start >
-    <div class="span2">
-      <Sidebar content >
-    </div>
-    < Bootstrap End >
-    
-    < Bootstrap Start >
-    <div class="span10">    
-      < Body content >
-      <h1>Hello, 부트스트랩</h1>
-    </div>    
-    < Bootstrap End>
-        
-  </div>
-</div>
-< Bootstrap End >
- -->
 
      

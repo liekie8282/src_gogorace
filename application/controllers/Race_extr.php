@@ -1,52 +1,33 @@
 <?php
  
-class Race_extr extends CI_Controller
+class Race_extr extends MY_Controller
 { 
 
     public function __construct()
     {
-        parent::__construct(); 
-        $this->load->database();
-        $this->load->model('race_info_model');
+        parent::__construct();
         
-    }
-
-    public function _head($year = FALSE)
-    {
-        
-        $this->load->view('templates/header');
-        
-        $obj_result = $this->race_info_model->gets($year); // 객체 리턴
-        $row = $this->race_info_model->get($year); // row 리턴        
-        $this->load->view('race_extr/race_menu_view', array('arr_result'=>$obj_result));
-        $this->load->view('race_extr/get_view', array('row'=>$row));
-        $this->load->view('race_extr/race_extr_view', array('arr_result'=>$obj_result));        
     }
     
     public function index()
     { 
-        $year = '2018';
-        $this->_head($year);
-        $this->load->view('templates/footer');
+        $this->_header();
+        $this->_footer();
     }
     
     public function gets($year)
     {
-        $year = '2018';
-        $this->_head($year);
-        
+        $this->_header();        
         //$this->load->view('race_extr/race_extr_view',$arr_result); //작동안됨.
-        $this->load->view('templates/footer');        
+        $this->_footer();
         
         /* 필드 유효성 체크 생략 ... 너무 복잡해*/
     }
 
     public function get($year)
     {
-        $year = '2018';
-        $this->_head($year);
-        
-        $this->load->view('templates/footer');
+        $this->_header();
+        $this->_footer();
     }   
 
     public function insert()

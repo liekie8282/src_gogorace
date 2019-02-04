@@ -58,8 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-// $autoload['libraries'] = array('database'); // DB자동 로딩 셋팅
-$autoload['libraries'] = array('');
+$autoload['libraries'] = array('database','session','form_validation');//추가
 
 /*
 | -------------------------------------------------------------------
@@ -90,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array();
+$autoload['helper'] = array('url','form','file'); //추가
 
 /*
 | -------------------------------------------------------------------
@@ -133,4 +132,5 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('race_info_model');
+//$autoload['model'] = array('race_info_model','race_result_model');

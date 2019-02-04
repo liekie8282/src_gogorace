@@ -6,8 +6,8 @@ class Form extends CI_Controller {
     {
         /* 1. 기본 클래스 로드 */
         //$this->load->helper('form');
-        $this->load->helper(array('form', 'url'));        
-        $this->load->library('form_validation');
+        //$this->load->helper(array('form'));        
+        //$this->load->library('form_validation');
         
        /* 2. validation 셋팅 */
         
